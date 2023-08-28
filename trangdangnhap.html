@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Đăng Nhập</title>
+    <link rel="stylesheet" href="quanlytruyen.css">
+</head>
+<body>
+
+<header id="main-header">
+<div class="theme">
+    <ul>
+    <li class="hide" id="story-manager"><a href="#" onclick="showListStory();">Quản Lý Truyện</a></li>
+    <li><a href="#" onclick="showHome();">Trang Chủ</a></li>
+    <li><input class="in-search" id="search" type="text" placeholder="Tên Truyện"></li>
+    <li><button onclick="searchStory();">Tìm kiếm</button></li>
+    <li id="longin"><button onclick="showFormLogin();">Đăng Nhập</button></li>
+    <li id="out" class="hide"><button onclick="logOut();">Đăng Xuất</button></li>
+    </ul>
+</div>
+</header>
+
+<div id="home" class="container" style="display: block">
+    <div id="showstory" class='grid-stories'></div>
+</div>
+<div id="mystories" class="stories" style="display: none">
+    <button class="btn-add" onclick="showEdit();">Thêm mới truyện</button>
+    <div id="listsotory"></div>
+</div>
+<div class="information" id="action" style="display: none">
+
+    <table class="table-form">
+        <tr>
+            <td></td>
+            <td><button style="float: right" onclick="hidenInformation();">x</button></td>
+        </tr>
+        <tr>
+            <th colspan="2" style="font-size: 20px">Thông tin truyện</th>
+        </tr>
+        <tr>
+            <th>Ảnh</th>
+            <td><input type="text" id="img"></td>
+        </tr>
+        <tr>
+            <th>Tên Truyện</th>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <th>Tác Giả</th>
+            <td><input type="text" id="author"></td>
+        </tr>
+        <tr>
+            <th>Tùy Chọn</th>
+            <td>
+                <button id="add" onclick="addStory()">Thêm Truyện</button>
+                <button id="update" onclick="updateStory()">Cập Nhật</button>
+            </td>
+
+        </tr>
+    </table>
+
+</div>
+
+<div id="formLogin" style="display: none">
+    <fieldset>
+        <h2>Đăng Nhập</h2>
+        <input id="username" type="text" placeholder="Tên Đăng Nhập"><br><br>
+        <input id="password" type="password" placeholder="Mật Khẩu"><br><br>
+        <span id="result"></span><br><br>
+        <button onclick="loginAccount()">Đăng Nhập</button>
+        <br>
+        Bạn đã có tài khoản chưa?<a href="#" onclick="showFormRegister()">Đăng Ký</a>
+    </fieldset>
+</div>
+
+<div id="formRegister" style="display: none">
+    <fieldset>
+        <h2>Đăng Ký</h2>
+        <input id="newName" type="text" placeholder="Tên Đăn Nhập"><br><br>
+        <input id="newPassword" type="text" placeholder="Mật Khẩu"><br><br>
+        <span id="result1"></span><br>
+        <button onclick="register()">Đăng Ký</button>
+        <br>
+        <span>Bạn đã có tài khoản?</span>
+        <a href="#" onclick="showFormLogin()">Đăng Nhập</a>
+    </fieldset>
+</div>
+
+</body>
+<script src="trangchutruyen.js"></script>
+<script src="trangdangnhap.js"></script>
+</html>
